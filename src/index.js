@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'react-router-redux'
 import store, { history } from './store'
-import Main from './views/main'
+import Main from './views/main/index.jsx'
 import './index.css'
 import registerServiceWorker from './registerServiceWorker'
 

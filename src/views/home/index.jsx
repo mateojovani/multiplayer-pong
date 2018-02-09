@@ -6,7 +6,7 @@ import React, { Component } from 'react'
 class Home extends Component {
     render(){
         return (
-            <div class="col-md-12" style={{"top": "20px"}}>
+            <div className="col-md-12" style={{"top": "20px"}}>
                 <div className="card" style={{"width": "80%", "padding": "10px", "margin": "auto"}}>
                 <div className="card-block">
                     <h4 className="card-title">Welcome Player</h4>

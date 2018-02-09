@@ -1,7 +1,9 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom'
-import Home from '../home'
-import Play from '../play'
+import Home from '../home/index.jsx'
+import Play from '../play/index.jsx'
+import Login from '../authenticate/login.jsx'
+import Register from '../authenticate/register.jsx'
 
 const Main = () => (
   <div>
@@ -18,7 +20,7 @@ const Main = () => (
                 <li className="nav-item"><Link className="nav-link" to="/play">Play</Link></li>
                 <li className="nav-item"><Link className="nav-link" to="/scores">Scoreboard</Link></li>
             </ul>
-            <Link to="/authenticate"><button className='btn btn-default'>Login/Register</button></Link>
+            <Link to="/login"><button className='btn btn-default'>Login</button></Link>
         </div>
         </nav>
     </header>
@@ -26,6 +28,8 @@ const Main = () => (
     <main>
         <Route exact path="/" component={Home} />
         <Route exact path="/play" component={Play} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={Register} />
     </main>
   </div>
 )
