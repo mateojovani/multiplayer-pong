@@ -11,13 +11,13 @@ api.get('/', function (req, res, next) {
 api.post('/login', function (req, res, next) {
     User.findOne({ username: req.body.username }, function(err, user) {
         if (err || user == null) {
-            res.status(500).json({status:500, data: "Username not found"})
+            res.status(200).json({status:404, data: "Username not found"})
         } else {
             if (user) {
                 if(user.validPassword(req.body.password))
-                    res.status(200).json({status:500, data: user.genJWT()})
+                    res.status(200).json({status:200, data: user.genJWT()})
                 else
-                    res.status(500).json({status:500, data: "Username/Password is incorrect"})
+                    res.status(200).json({status:404, data: "Username/Password is incorrect"})
             } 
         }
     })
