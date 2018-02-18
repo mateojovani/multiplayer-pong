@@ -2,8 +2,10 @@ import React from 'react';
 import { Route, Link } from 'react-router-dom'
 import Home from '../home/index.jsx'
 import Play from '../play/index.jsx'
+import PlayOffline from '../play/offline.jsx'
 import Login from '../authenticate/login.jsx'
 import Register from '../authenticate/register.jsx'
+import About from '../about/index.jsx'
 import { LocalStorage } from '../../utils'
 
 const Main = () => (
@@ -20,6 +22,7 @@ const Main = () => (
             <ul className="navbar-nav mr-auto">
                 <li className="nav-item"><Link className="nav-link" to="/play"> Play</Link></li>
                 <li className="nav-item"><Link className="nav-link" to="/scores">Scoreboard</Link></li>
+                <li className="nav-item"><Link className="nav-link" to="/about">About</Link></li>
             </ul>
             {   LocalStorage.hasToken() ? 
                 (<button className='btn btn-default' onClick={() => {
@@ -35,8 +38,10 @@ const Main = () => (
     <main>
         <Route exact path="/" component={Home} />
         <Route exact path="/play" component={Play} />
+        <Route exact path="/play/offline" component={PlayOffline} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
+        <Route exact path="/about" component={About} />
     </main>
   </div>
 )

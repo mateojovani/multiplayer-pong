@@ -1,6 +1,4 @@
-import { push } from 'react-router-redux'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import React, { Component } from 'react'
 
 class Play extends Component {
@@ -10,9 +8,10 @@ class Play extends Component {
                 <div className="col-md-4 p-2">
                     <div className="card p-3">
                         <div className="card-block">
-                            <p className="card-text">Play Against Computer</p>
+                            <h4 className="card-title">Play Against Computer</h4>
+                            <p className="card-text">Have nobody around to play against? Why don't you challenge our smart AI?</p>
                             <hr />
-                            <button href="/play" className="btn btn-default">Go</button>
+                            <Link to="/play/offline"><button className="btn btn-default"><i className="fas fa-laptop"></i> Go</button></Link>
                         </div>
                     </div>
                 </div>
@@ -20,9 +19,10 @@ class Play extends Component {
                 <div className="col-md-4 p-2">
                     <div className="card p-3">
                         <div className="card-block">
-                            <p className="card-text">Local Multiplayer</p>
+                            <h4 className="card-title">Local Multiplayer</h4>
+                            <p className="card-text">Challenge your friends in a local area network this local web server is running</p>
                             <hr />
-                            <button href="/play" className="btn btn-default">Go</button>
+                            <Link to="/play/local"><button className="btn btn-default"><i className="far fa-building"></i> Go</button></Link>
                         </div>
                     </div>
                 </div>
@@ -30,9 +30,10 @@ class Play extends Component {
                 <div className="col-md-4 p-2">
                     <div className="card p-3">
                         <div className="card-block">
-                            <p className="card-text">Online Multiplayer</p>
+                            <h4 className="card-title">Online Multiplayer</h4>
+                            <p className="card-text">Play against a randomly selected opponent or in a public room</p>
                             <hr />
-                            <button href="/play" className="btn btn-success" disabled>Go</button>
+                            <Link to="/play/online"><button className="btn btn-default" disabled><i className="fas fa-users"></i> Go (Coming Soon!)</button></Link>
                         </div>
                     </div>
                 </div>
@@ -41,12 +42,4 @@ class Play extends Component {
     }
 }
 
-
-const mapDispatchToProps = dispatch => bindActionCreators({
-  changePage: () => push('/play')
-}, dispatch)
-
-export default connect(
-  null, 
-  mapDispatchToProps
-)(Play)
+export default Play

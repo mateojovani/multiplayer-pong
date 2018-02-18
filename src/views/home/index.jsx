@@ -4,8 +4,9 @@ import React, { Component } from 'react'
 class Home extends Component {
     render(){
         return (
-            <div className="col-md-12 mt-2">
-                <div className="card mx-auto col-md-10 p-2">
+            <div className="col-md-10 mx-auto mt-2">
+                <div className="card p-3">
+                <img className="card-img-top mx-auto" src="/assets/pong-game.png" alt="Pong Game" style={{width: '50%'}} height="300"/><br />
                 <div className="card-block">
                     <h4 className="card-title">Welcome Player</h4>
                     <p className="card-text">Pong is a two-dimensional sports game that simulates table tennis. <br />

@@ -88,6 +88,7 @@ class Register extends Component {
                 resolve => {
                     this.props.changePage('/')
                     LocalStorage.setToken(resolve.data, this.state.username)
+                    window.location.reload()
                 },
     
                 reject => {
