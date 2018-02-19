@@ -3,11 +3,12 @@ import { Rect } from 'react-konva'
 
 class Paddle extends Component {
     componentDidMount(){
-        document.addEventListener("keydown", this.props.onKeyDown, false)
+        if(typeof this.props.onKeyDown === 'function')
+            document.addEventListener("keydown", this.props.onKeyDown, false)
     }
 
-    to(destination){
-        this.refs.rect.to(destination)
+    to(destination, callback){
+        this.refs.rect.to(destination, callback)
     }
 
     render() {
